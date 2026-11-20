@@ -1,0 +1,46 @@
+Library
+[ :translator:DatomReadingBudget :nexus:Unobserved ]
+[ JobId.String Text.String Moment.Integer BackendName.String ModelName.String
+  ServiceAddress.String SecretEntry.String Language.String Instruction.String
+  Term.String Failure.String Program.String SourceName.String ProviderId.String
+  Seconds.Integer Days.Integer Kilobits.Integer HistoryLength.Integer
+  Directory.String AudioLocation.{ Directory JobId }
+  Interruption.{ JobId Failure }
+  AudioServerAddress.String PulseApplicationName.String SampleRate.Integer
+  CaptureFragmentBytes.Integer CaptureBufferBytes.Integer PendingPcmFrames.Integer
+  EncodingComplexity.Integer ExpectedPacketLoss.Integer PagePackets.Integer
+  PulseServer.[ Default Named.AudioServerAddress ]
+  Channels.[ Mono Stereo ]
+  OpusFrameDuration.[ TwoAndHalfMilliseconds FiveMilliseconds TenMilliseconds
+    TwentyMilliseconds FortyMilliseconds SixtyMilliseconds ]
+  OpusApplication.[ Voice Audio RestrictedLowDelay ]
+  BitrateControl.[ Constant Variable ConstrainedVariable ]
+  AudioSignal.[ Automatic Voice Music ]
+  AudioBandwidth.[ Automatic Narrowband Mediumband Wideband Superwideband Fullband ]
+  DiscontinuousTransmission.[ Enabled Disabled ]
+  ForwardErrorCorrection.[ Enabled Disabled ]
+  AudioDurability.[ SyncEachPage SyncAtStop ]
+  GapHandling.[ Silence Interrupt ]
+  RecordingSettings.{ PulseServer PulseApplicationName SampleRate Channels
+    CaptureFragmentBytes CaptureBufferBytes PendingPcmFrames OpusFrameDuration
+    OpusApplication BitrateControl EncodingComplexity AudioSignal AudioBandwidth
+    DiscontinuousTransmission ForwardErrorCorrection ExpectedPacketLoss PagePackets
+    AudioDurability GapHandling }
+  Protocol.[ OpenAiTranscription Gemini ]
+  Backend.{ BackendName Protocol ServiceAddress ModelName SecretEntry Language Instruction Timeout.Seconds }
+  Delivery.[ Pasted Copied Kept ]
+  Options.{ Option<Delivery> Option<Vector<BackendName>> }
+  Sequence.[ AsRecorded AsReady ] Retention.[ Forever Days ]
+  Source.[ Default Named.SourceName ]
+  Failing.[ Failure Unobserved ] Try.{ BackendName Failing }
+  Transcript.{ BackendName Option<ProviderId> Text }
+  State.[ Recording Transcribing Waiting Delivered Failed Cancelled ]
+  JobState.{ JobId State } Ready.{ JobId Text Delivery } Past.{ JobId Moment Text }
+  Hearing.[ Heard.{ Transcript Vector<Try> } Exhausted.Vector<Try> ]
+  Handing.[ Pasted Copied Kept ]
+  Configuration.{ Vector<Backend> Order.Vector<BackendName> Delivery Sequence
+    AudioKept.Retention TextKept.Retention Vector<Term> Kilobits Source HistoryLength
+    PasteProgram.Program CopyProgram.Program SecretProgram.Program
+    AudioDirectory.Directory Budget.DatomReadingBudget RecordingSettings } ]
+[]
+[]

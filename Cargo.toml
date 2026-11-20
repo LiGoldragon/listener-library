@@ -1,0 +1,26 @@
+[package]
+name = "listener-library"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.89"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/LiGoldragon/listener-library"
+publish = false
+build = "build.rs"
+
+[features]
+default = []
+datom = ["dep:datom-codec", "nexus/datom", "translator/datom"]
+
+[dependencies]
+rkyv = { version = "0.8", default-features = false, features = ["std", "bytecheck", "little_endian", "pointer_width_32", "unaligned"] }
+datom-codec = { git = "https://github.com/LiGoldragon/datom-codec", rev = "09a0526", optional = true }
+nexus = { git = "https://github.com/LiGoldragon/nexus", rev = "ea4db5a51083f114c624fc23c023c7a255376846", default-features = false }
+translator = { git = "https://github.com/LiGoldragon/translator", rev = "8d26df34e13291f34fcda85513c86e6f7c271405", default-features = false }
+[build-dependencies]
+ethos-zero = { git = "https://github.com/LiGoldragon/ethos-zero", rev = "2999292dc67c8608e54d32c333c550b29153cbff" }
+
+[lints.rust]
+unsafe_code = "forbid"
+unused = { level = "warn", priority = -1 }
+dead_code = "warn"
