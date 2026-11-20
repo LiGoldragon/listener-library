@@ -10,9 +10,10 @@ build = "build.rs"
 
 [features]
 default = []
-datom = ["dep:datom-codec", "nexus/datom", "translator/datom"]
+datom = ["dep:datom-codec", "nexus/datom", "translator/datom", "signal/datom"]
 
 [dependencies]
+signal = { git = "https://github.com/LiGoldragon/signal", rev = "4f5cbb9", default-features = false }
 rkyv = { version = "0.8", default-features = false, features = ["std", "bytecheck", "little_endian", "pointer_width_32", "unaligned"] }
 datom-codec = { git = "https://github.com/LiGoldragon/datom-codec", rev = "09a0526", optional = true }
 nexus = { git = "https://github.com/LiGoldragon/nexus", rev = "ea4db5a51083f114c624fc23c023c7a255376846", default-features = false }

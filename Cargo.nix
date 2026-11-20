@@ -277,9 +277,9 @@ rec {
       };
       "errno" = rec {
         crateName = "errno";
-        version = "0.3.15";
+        version = "0.3.14";
         edition = "2018";
-        sha256 = "0xj7g0gdrgylxchyzxpfvvb5322j87zbhgal3pjr1fyfyiw6wpg3";
+        sha256 = "1szgccmh8vgryqyadg8xd58mnwwicf39zmin3bsn63df2wbbgjir";
         authors = [
           "Chris Wong <lambda.fairy@gmail.com>"
           "Dan Gohman <dev@sunfishcode.online>"
@@ -792,6 +792,11 @@ rec {
             features = [ "std" "bytecheck" "little_endian" "pointer_width_32" "unaligned" ];
           }
           {
+            name = "signal";
+            packageId = "signal";
+            usesDefaultFeatures = false;
+          }
+          {
             name = "tokio";
             packageId = "tokio";
             usesDefaultFeatures = false;
@@ -810,15 +815,15 @@ rec {
           }
         ];
         features = {
-          "datom" = [ "dep:datom-codec" "nexus/datom" "translator/datom" ];
+          "datom" = [ "dep:datom-codec" "nexus/datom" "translator/datom" "signal/datom" ];
         };
         resolvedDefaultFeatures = [ "datom" "default" ];
       };
       "log" = rec {
         crateName = "log";
-        version = "0.4.35";
+        version = "0.4.34";
         edition = "2021";
-        sha256 = "0p002750b2hab9bnlxxrvk5g9dvyaf23kiy39s6wsi6s29nzh5ax";
+        sha256 = "1ihkzn0m33ab79fcl4mkb04n5iwqzbxzyw7l7hazqkffaqzbvy7r";
         authors = [
           "The Rust Project Developers"
         ];
@@ -1396,9 +1401,19 @@ rec {
         };
         dependencies = [
           {
+            name = "datom-codec";
+            packageId = "datom-codec";
+            optional = true;
+          }
+          {
             name = "futures-core";
             packageId = "futures-core";
             usesDefaultFeatures = false;
+          }
+          {
+            name = "protos";
+            packageId = "protos";
+            optional = true;
           }
           {
             name = "rkyv";
@@ -1420,6 +1435,7 @@ rec {
         features = {
           "datom" = [ "dep:datom-codec" "dep:protos" ];
         };
+        resolvedDefaultFeatures = [ "datom" ];
       };
       "signal-hook-registry" = rec {
         crateName = "signal-hook-registry";
