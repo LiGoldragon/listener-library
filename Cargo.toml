@@ -17,6 +17,12 @@ rkyv = { version = "0.8", default-features = false, features = ["std", "bytechec
 datom-codec = { git = "https://github.com/LiGoldragon/datom-codec", rev = "09a0526", optional = true }
 nexus = { git = "https://github.com/LiGoldragon/nexus", rev = "ea4db5a51083f114c624fc23c023c7a255376846", default-features = false }
 translator = { git = "https://github.com/LiGoldragon/translator", rev = "8d26df34e13291f34fcda85513c86e6f7c271405", default-features = false }
+# Carry the optional edges of the shared registry's existing feature union.
+futures-util = { version = "0.3.34", default-features = false, features = ["std", "async-await-macro", "channel", "io", "sink"] }
+futures-channel = { version = "0.3.34", default-features = false, features = ["sink", "std"] }
+mio = { version = "1.2", features = ["log"] }
+tokio = { version = "1.53.1", default-features = false, features = ["io-util", "macros", "net", "process", "rt", "rt-multi-thread", "signal", "sync", "time", "tracing"] }
+
 [build-dependencies]
 ethos-zero = { git = "https://github.com/LiGoldragon/ethos-zero", rev = "2999292dc67c8608e54d32c333c550b29153cbff" }
 
