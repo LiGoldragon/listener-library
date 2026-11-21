@@ -551,7 +551,7 @@ dependencies = [
 [[package]]
 name = "translator"
 version = "0.2.0"
-source = "git+https://github.com/LiGoldragon/translator?rev=77ecf05ff43d2063cf4336287dd4bf281ca2e69f#77ecf05ff43d2063cf4336287dd4bf281ca2e69f"
+source = "git+https://github.com/LiGoldragon/translator?rev=cb4f6f4e5b3ef07f41d749e669dda58a6bcbf585#cb4f6f4e5b3ef07f41d749e669dda58a6bcbf585"
 dependencies = [
  "datom-codec",
  "protos",
