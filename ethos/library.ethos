@@ -4,6 +4,7 @@ Library
   ServiceAddress.String SecretEntry.String Language.String Instruction.String
   Term.String Failure.String Program.String SourceName.String ProviderId.String
   Seconds.Integer Days.Integer Kilobits.Integer HistoryLength.Integer
+  UnknownBackend.BackendName
   Directory.String AudioLocation.{ Directory JobId }
   Interruption.{ JobId Failure }
   AudioServerAddress.String PulseApplicationName.String SampleRate.Integer
