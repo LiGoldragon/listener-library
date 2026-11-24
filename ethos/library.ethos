@@ -27,7 +27,7 @@ Library
     OpusApplication BitrateControl EncodingComplexity AudioSignal AudioBandwidth
     DiscontinuousTransmission ForwardErrorCorrection ExpectedPacketLoss PagePackets
     AudioDurability GapHandling }
-  Protocol.[ OpenAiTranscription Gemini ]
+  Protocol.[ OpenAiTranscription Gemini OpenAiRealtimeTranscription ]
   Backend.{ BackendName Protocol ServiceAddress ModelName SecretEntry Language Instruction Timeout.Seconds }
   Delivery.[ Pasted Copied Kept ]
   Options.{ Option<Delivery> Option<Vector<BackendName>> }

@@ -252,6 +252,7 @@ pub struct RecordingSettings {
 pub enum Protocol {
     OpenAiTranscription,
     Gemini,
+    OpenAiRealtimeTranscription,
 }
 #[rustfmt::skip]
 #[derive(rkyv::Archive, rkyv::Serialize, rkyv::Deserialize, Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
