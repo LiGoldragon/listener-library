@@ -29,17 +29,17 @@ Library
   Protocol.[ OpenAiTranscription Gemini ]
   Backend.{ BackendName Protocol ServiceAddress ModelName SecretEntry Language Instruction Timeout.Seconds }
   Delivery.[ Pasted Copied Kept ]
-  Options.{ Option<Delivery> Option<Vector<BackendName>> }
+  Options.{ Option<Delivery> Option<⟦ BackendName ⟧> }
   Sequence.[ AsRecorded AsReady ] Retention.[ Forever Days ]
   Source.[ Default Named.SourceName ]
   Failing.[ Failure Unobserved ] Try.{ BackendName Failing }
   Transcript.{ BackendName Option<ProviderId> Text }
   State.[ Recording Transcribing Waiting Delivered Failed Cancelled ]
   JobState.{ JobId State } Ready.{ JobId Text Delivery } Past.{ JobId Moment Text }
-  Hearing.[ Heard.{ Transcript Vector<Try> } Exhausted.Vector<Try> ]
+  Hearing.[ Heard.{ Transcript ⟦ Try ⟧ } Exhausted.⟦ Try ⟧ ]
   Handing.[ Pasted Copied Kept ]
-  Configuration.{ Vector<Backend> Order.Vector<BackendName> Delivery Sequence
-    AudioKept.Retention TextKept.Retention Vector<Term> Kilobits Source HistoryLength
+  Configuration.{ ⟦ Backend ⟧ Order.⟦ BackendName ⟧ Delivery Sequence
+    AudioKept.Retention TextKept.Retention ⟦ Term ⟧ Kilobits Source HistoryLength
     PasteProgram.Program CopyProgram.Program SecretProgram.Program
     AudioDirectory.Directory Budget.DatomReadingBudget RecordingSettings } ]
 []

@@ -25,7 +25,7 @@ mio = { version = "1.2", features = ["log"] }
 tokio = { version = "1.53.1", default-features = false, features = ["io-util", "macros", "net", "process", "rt", "rt-multi-thread", "signal", "sync", "time", "tracing"] }
 
 [build-dependencies]
-ethos-zero = { git = "https://github.com/LiGoldragon/ethos-zero", rev = "2999292dc67c8608e54d32c333c550b29153cbff" }
+ethos-zero = { git = "https://github.com/LiGoldragon/ethos-zero", rev = "eba13730dec18bff0fda1ce3b155e046544fbec8" }
 
 [lints.rust]
 unsafe_code = "forbid"
